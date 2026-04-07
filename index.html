@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>NanoMCMod - KI erstellt Minecraft Mods</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>🎮 NanoMCMod</h1>
+    <p>Erstelle Minecraft Mods mit KI – wähle Claude, Gemini, ChatGPT oder Qwen</p>
+  </header>
+
+  <main>
+    <form id="modForm">
+      <label for="aiProvider">KI auswählen:</label>
+      <select id="aiProvider" name="aiProvider">
+        <option value="openai">ChatGPT (OpenAI)</option>
+        <option value="anthropic">Claude (Anthropic)</option>
+        <option value="google">Gemini (Google)</option>
+        <option value="qwen">Qwen (Alibaba)</option>
+      </select>
+
+      <label for="description">Beschreibe deine Mod:</label>
+      <textarea id="description" name="description" rows="6" 
+        placeholder="z.B. 'Ein Block, der bei Rechtsklick Feuer spuckt'"></textarea>
+
+      <button type="submit">✨ Mod generieren</button>
+    </form>
+
+    <div id="result" class="hidden">
+      <h3>✅ Deine Mod wurde erstellt!</h3>
+      <p><strong>Download:</strong></p>
+      <a id="downloadSrc" href="#" download>📦 Quellcode (.zip)</a><br/>
+      <a id="downloadJar" href="#" download>🗜️ Mod-Datei (.jar)</a>
+      <pre id="codePreview"></pre>
+    </div>
+
+    <div id="loading" class="hidden">⏳ KI arbeitet... bitte warten...</div>
+    <div id="error" class="hidden error"></div>
+  </main>
+
+  <footer>
+    <p>🔐 Hinweis: API-Keys werden NICHT im Browser gespeichert. Für echte Generierung benötigst du ein Backend.</p>
+    <p><a href="https://github.com/LobiGmbh/nanomcmod" target="_blank">GitHub Repo</a> | NanoMCMod v0.1 Beta</p>
+  </footer>
+
+  <script src="config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
